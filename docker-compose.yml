@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    mysql:
+        container_name: mysql
+        image: mysql:latest
+        volumes:
+            - ./.docker/mysql:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: devpass
+            MYSQL_DATABASE: laravel
+        ports:
+            - 3306:3306
