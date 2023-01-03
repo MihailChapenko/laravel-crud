@@ -17,6 +17,12 @@
                     <label for="userEmail" class="col-form-label">User Email</label>
                     <input type="text" class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" id="userEmail">
                 </div>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="userRole">
+                        <option value="1" selected>User</option>
+                        <option value="2">Admin</option>
+                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

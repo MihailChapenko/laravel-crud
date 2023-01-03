@@ -33,8 +33,10 @@ class UserController extends Controller
         ];
 
         $user = $this->user->create($newUser);
-        if(is_null($user)) {
-            return response()->json(['error' => 'user was not created'], 400);
+        if ($request->input('userRole') == 1) {
+            $user->assignRole('user');
+        } else {
+            $user->assignRole('admin');
         }
 
         return response()->json(['success' => true]);

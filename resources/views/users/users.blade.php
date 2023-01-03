@@ -9,7 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                    @can(['create users'])
                     <button id="createUser" type="button" class="btn btn-primary mb-4">Create new user</button>
+                    @endcan
                     <table id="userTable" class="table table-hover">
                         <thead>
                         <tr>
@@ -26,8 +28,12 @@
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->created_at}}</td>
                                 <td>
+                                    @can('update users')
                                     <button id-user={{$user->id}} type="button" class="btn btn-warning edit-user">Edit</button>
+                                    @endcan
+                                    @can('delete users')
                                     <button id-user={{$user->id}} type="button" class="btn btn-danger delete-user">Delete</button>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

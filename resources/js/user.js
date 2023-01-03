@@ -7,7 +7,8 @@ $(document).ready(function () {
 
     $('#createUserSubmit').on('click', function() {
         let name = $('#userName').val(),
-            email = $('#userEmail').val();
+            email = $('#userEmail').val(),
+            role = $('#userRole').find(":selected").val();
 
         $.ajax({
             type: 'post',
@@ -15,6 +16,7 @@ $(document).ready(function () {
             data: {
                 userName: name,
                 userEmail: email,
+                userRole: role
             },
             error: function (error) {
                 Swal.fire({
